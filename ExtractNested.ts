@@ -6,7 +6,7 @@ type HasNestedObject<T> = {
     : false;
 }[keyof T];
 
-type ExtractNested<T, U> = T extends object
+export type ExtractNested<T, U> = T extends object
   ? {
       [K in keyof T]: K extends keyof U
         ? T[K] extends Array<infer R>
